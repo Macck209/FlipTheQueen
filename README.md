@@ -1,4 +1,4 @@
 # FlipTheQueen
-Platformówka
+Platformówka 2D
 
 Uratuj królowę żółwi!
