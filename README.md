@@ -1,6 +1,12 @@
 # FlipTheQueen
-Platformówka 2D
+## About
+(coś o grze)
 
-Uratuj królowę żółwi!
+## Requirements
+(wymagania sprzętowe???)
 
-Gra typu singleplayer offline
+## Credits
+(kto co robił)
+
+## Assets used
+- [https://unitycodemonkey.com/video.php?v=wBol2xzxCOU](Code Monkey's parallax background script)
