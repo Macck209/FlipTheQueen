@@ -9,4 +9,4 @@
 (kto co robił)
 
 ## Assets used
-- [https://unitycodemonkey.com/video.php?v=wBol2xzxCOU](Code Monkey's parallax background script)
+- [Code Monkey's parallax background script](https://unitycodemonkey.com/video.php?v=wBol2xzxCOU)
