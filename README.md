@@ -1,4 +1,12 @@
 # FlipTheQueen
-Platformówka 2D
+## About
+(coś o grze)
 
-Uratuj królowę żółwi!
+## Requirements
+(wymagania sprzętowe???)
+
+## Credits
+(kto co robił)
+
+## Assets used
+- [Code Monkey's parallax background script](https://unitycodemonkey.com/video.php?v=wBol2xzxCOU)
