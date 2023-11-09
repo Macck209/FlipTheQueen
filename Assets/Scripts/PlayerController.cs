@@ -29,7 +29,7 @@ public class PlayerController : MonoBehaviour
     {
         if (rb.velocity.y < 0)
         {
-            rb.velocity -= new Vector2(0, fallModifier * Time.deltaTime);
+            rb.velocity -= new Vector2(0, fallModifier * Time.fixedDeltaTime);
         }
 
         rb.velocity = new Vector2(Input.GetAxis("Horizontal") * walkSpeed, rb.velocity.y);
