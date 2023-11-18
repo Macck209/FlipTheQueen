@@ -4,8 +4,9 @@ public class PlayerController : MonoBehaviour
 {
     public Transform groundCheck;
     public LayerMask groundLayer;
+    public float walkSpeed=10;
 
-    [SerializeField] int walkSpeed = 5, jumpForce = 8, fallModifier = 1, dashForce = 30;
+    [SerializeField] int jumpForce = 30, fallModifier = 100, dashForce = 30;
 
     Rigidbody2D rb;
     bool isGrounded = true;
@@ -37,7 +38,7 @@ public class PlayerController : MonoBehaviour
 
     private void Update()
     {
-        isGrounded = Physics2D.OverlapCircle(groundCheck.position, 0.5f, groundLayer);
+        isGrounded = Physics2D.OverlapBox(groundCheck.position,new Vector2(1f,0.2f),0,groundLayer);
 
         dashTime += Time.deltaTime;
         if(dashTime >= 0.5f)
@@ -102,7 +103,7 @@ public class PlayerController : MonoBehaviour
     private void OnDrawGizmos()
     {
         Gizmos.color = Color.red;
-        Gizmos.DrawWireSphere(groundCheck.position, 0.5f);
+        Gizmos.DrawWireCube(groundCheck.position, new Vector3(1f,0.2f,0));
     }
     */
 }
