@@ -96,6 +96,7 @@ public class PlayerController : MonoBehaviour
         {
             dashVector.x *= -1.0f;
             rb.velocity *= new Vector2(-1,1);
+            rb.velocity += new Vector2(0,20.0f);
         }
     }
 
