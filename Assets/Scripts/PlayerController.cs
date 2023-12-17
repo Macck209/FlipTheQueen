@@ -6,6 +6,10 @@ public class PlayerController : MonoBehaviour
     public LayerMask groundLayer;
     public float walkSpeed=10;
 
+    public AudioSource audioSource;
+    public AudioClip jumpSound;
+    public AudioClip wallHitSound;
+
     [SerializeField] int jumpForce = 30, fallModifier = 100, dashForce = 30;
 
     Rigidbody2D rb;
@@ -16,6 +20,11 @@ public class PlayerController : MonoBehaviour
     Vector2 dashVector = Vector2.zero;
     Vector2 dashDir = Vector2.zero;
     float dashTime = 0.0f;
+
+    public void PlaySound(AudioClip clip, float volume=1.0f)
+    {
+        audioSource.PlayOneShot(clip, volume);
+    }
 
     private Vector2 Vector2Dir(Vector2 vec)
     {
@@ -51,7 +60,10 @@ public class PlayerController : MonoBehaviour
         if (isGrounded)
         {
             if(Input.GetButtonDown("Jump"))
+            {
                 rb.velocity = new Vector2(rb.velocity.x, jumpForce);
+                PlaySound(jumpSound);
+            }   
 
             ableToDash = false;
             isDashing = false;
@@ -97,6 +109,7 @@ public class PlayerController : MonoBehaviour
             dashVector.x *= -1.0f;
             rb.velocity *= new Vector2(-1,1);
             rb.velocity += new Vector2(0,20.0f);
+            PlaySound(wallHitSound);
         }
     }
 

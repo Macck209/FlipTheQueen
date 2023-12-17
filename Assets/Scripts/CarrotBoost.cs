@@ -6,6 +6,7 @@ public class CarrotBoost : MonoBehaviour
     [SerializeField] float boostModifier = 1.25f;
 
     PlayerController playerController;
+    [SerializeField] AudioClip consumeSound;
 
     private void Start()
     {
@@ -19,6 +20,7 @@ public class CarrotBoost : MonoBehaviour
             StartCoroutine(ChangeSpeed(playerController.walkSpeed));
             gameObject.GetComponent<CircleCollider2D>().enabled = false;
             gameObject.GetComponent<SpriteRenderer>().enabled = false;
+            playerController.PlaySound(consumeSound);
         }
     }
 
