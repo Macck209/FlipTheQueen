@@ -47,8 +47,10 @@ public class MenuControl : MonoBehaviour
     public void RevertSettings()
     {
         gameSettings.volumeSlider.value = 0.7f;
-        // TODO revert btn functionality
+        Screen.fullScreen = true;
+        gameSettings.fullToggle.isOn = true;
     }
+
     public void SaveSettings()
     {
         gameSettings.SaveSettings();
@@ -62,7 +64,6 @@ public class MenuControl : MonoBehaviour
         audioSource.volume = PlayerPrefs.GetFloat("soundVolume", 0.7f);
     }
 
-
     public void BackToMainMenu()
     {
         creditsView.SetActive(false);
@@ -70,12 +71,12 @@ public class MenuControl : MonoBehaviour
         mainOptionsView.SetActive(true);
     }
 
-
     public void PlayGame()
     {
         SceneManager.LoadScene("GameScene");
         // TODO Show level selector instead of loading GameScene
     }
+
     public void QuitGame()
     {
         Application.Quit();

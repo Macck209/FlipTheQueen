@@ -3169,6 +3169,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   volumeSlider: {fileID: 1215561115}
+  fullToggle: {fileID: 383187982}
 --- !u!4 &1330732095
 Transform:
   m_ObjectHideFlags: 0
