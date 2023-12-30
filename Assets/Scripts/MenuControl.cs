@@ -46,6 +46,7 @@ public class MenuControl : MonoBehaviour
 
     public void RevertSettings()
     {
+        gameSettings.volumeSlider.value = 0.7f;
         // TODO revert btn functionality
     }
     public void SaveSettings()

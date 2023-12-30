@@ -1,5 +1,6 @@
 using System;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class GameSettings : MonoBehaviour
 {
@@ -8,10 +9,12 @@ public class GameSettings : MonoBehaviour
     private float soundVolume;
     private string gameResolution;
     private bool fullScreen;
+    public Slider volumeSlider;
 
     private void Awake()
     {
         audioSource = GameObject.FindObjectOfType<AudioSource>();
+        volumeSlider.value = PlayerPrefs.GetFloat("soundVolume", 0.7f);
         // TODO after changing scene - find new audiosource
     }
     public void LoadSettings()
