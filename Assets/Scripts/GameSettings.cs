@@ -22,6 +22,7 @@ public class GameSettings : MonoBehaviour
 
         Screen.fullScreen = fullScreen;
         audioSource.volume = soundVolume;
+        
     }
     public void SaveSettings()
     {

@@ -5,16 +5,21 @@ public class MenuControl : MonoBehaviour
 {
     [SerializeField]
     private GameObject mainOptionsView, settingsView, settingsControl;
-
+    private AudioSource audioSource;
     private GameSettings gameSettings;
+
+
 
     private void Start()
     {
-        gameSettings= settingsControl.GetComponent<GameSettings>(); 
+        gameSettings = settingsControl.GetComponent<GameSettings>(); 
         gameSettings.LoadSettings();
 
         mainOptionsView.SetActive(true);
         settingsView.SetActive(false);
+
+        audioSource = GameObject.FindObjectOfType<AudioSource>();
+        audioSource.volume = PlayerPrefs.GetFloat("soundVolume", 0.7f);
     }
 
     public void GotoSettings()
@@ -30,8 +35,12 @@ public class MenuControl : MonoBehaviour
     {
         gameSettings.SaveSettings();
 
+
         mainOptionsView.SetActive(true);
         settingsView.SetActive(false);
+
+        audioSource = GameObject.FindObjectOfType<AudioSource>();
+        audioSource.volume = PlayerPrefs.GetFloat("soundVolume", 0.7f);
     }
 
     public void PlayGame()
