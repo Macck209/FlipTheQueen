@@ -11,7 +11,7 @@ public class GameSettings : MonoBehaviour
 
     private void Awake()
     {
-        audioSource = GameObject.FindObjectOfType<AudioSource>(); 
+        audioSource = GameObject.FindObjectOfType<AudioSource>();
         // TODO after changing scene - find new audiosource
     }
     public void LoadSettings()
