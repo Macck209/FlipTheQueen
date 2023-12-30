@@ -3564,6 +3564,7 @@ MonoBehaviour:
   audioSource: {fileID: 652081371}
   jumpSound: {fileID: 8300000, guid: ce0cad1db92b5d5468b63e0f142aded3, type: 3}
   wallHitSound: {fileID: 8300000, guid: da3506b5f20d923418c0724c48211717, type: 3}
+  dashSound: {fileID: 8300000, guid: fab822d5baa97454793b3389d7ccf346, type: 3}
   jumpForce: 30
   fallModifier: 100
   dashForce: 30
@@ -4308,7 +4309,7 @@ AudioSource:
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 8300000, guid: 9358a638869688b4fb1bda7278216e36, type: 3}
   m_PlayOnAwake: 1
-  m_Volume: 0.5
+  m_Volume: 0.4
   m_Pitch: 1
   Loop: 1
   Mute: 0

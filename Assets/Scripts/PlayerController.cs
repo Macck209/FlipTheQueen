@@ -9,6 +9,7 @@ public class PlayerController : MonoBehaviour
     public AudioSource audioSource;
     public AudioClip jumpSound;
     public AudioClip wallHitSound;
+    public AudioClip dashSound;
 
     [SerializeField] int jumpForce = 30, fallModifier = 100, dashForce = 30;
 
@@ -86,6 +87,7 @@ public class PlayerController : MonoBehaviour
                     dashDir.y = 1;
 
                 rb.velocity = new Vector2(dashVector.x, dashVector.y * (5/3)) * dashDir + new Vector2(0,dashForce/3);
+                PlaySound(dashSound);
             }
         }
     }
