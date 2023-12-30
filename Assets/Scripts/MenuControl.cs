@@ -4,7 +4,7 @@ using UnityEngine.SceneManagement;
 public class MenuControl : MonoBehaviour
 {
     [SerializeField]
-    private GameObject mainOptionsView, settingsView, settingsControl;
+    private GameObject mainOptionsView, settingsView, creditsView, settingsControl;
     private AudioSource audioSource;
     private GameSettings gameSettings;
 
@@ -17,6 +17,7 @@ public class MenuControl : MonoBehaviour
 
         mainOptionsView.SetActive(true);
         settingsView.SetActive(false);
+        creditsView.SetActive(false);
 
         audioSource = GameObject.FindObjectOfType<AudioSource>();
         audioSource.volume = PlayerPrefs.GetFloat("soundVolume", 0.7f);
@@ -25,8 +26,24 @@ public class MenuControl : MonoBehaviour
     public void GotoSettings()
     {
         mainOptionsView.SetActive(false);
+        creditsView.SetActive(false);
         settingsView.SetActive(true);
+
+        audioSource = GameObject.FindObjectOfType<AudioSource>();
+        audioSource.volume = PlayerPrefs.GetFloat("soundVolume", 0.7f);
     }
+
+
+    public void GotoCredits()
+    {
+        mainOptionsView.SetActive(false);
+        settingsView.SetActive(false);
+        creditsView.SetActive(true);
+
+        audioSource = GameObject.FindObjectOfType<AudioSource>();
+        audioSource.volume = PlayerPrefs.GetFloat("soundVolume", 0.7f);
+    }
+
     public void RevertSettings()
     {
         // TODO revert btn functionality
@@ -35,13 +52,23 @@ public class MenuControl : MonoBehaviour
     {
         gameSettings.SaveSettings();
 
-
-        mainOptionsView.SetActive(true);
         settingsView.SetActive(false);
+        creditsView.SetActive(false);
+        mainOptionsView.SetActive(true);
+        
 
         audioSource = GameObject.FindObjectOfType<AudioSource>();
         audioSource.volume = PlayerPrefs.GetFloat("soundVolume", 0.7f);
     }
+
+
+    public void BackToMainMenu()
+    {
+        creditsView.SetActive(false);
+        settingsView.SetActive(false);
+        mainOptionsView.SetActive(true);
+    }
+
 
     public void PlayGame()
     {

@@ -34,6 +34,7 @@ public class GameSettings : MonoBehaviour
 
     public void ChangeSoundVolume(Single s)
     {
+        audioSource = GameObject.FindObjectOfType<AudioSource>();
         soundVolume = s;
         audioSource.volume = soundVolume;
     }
