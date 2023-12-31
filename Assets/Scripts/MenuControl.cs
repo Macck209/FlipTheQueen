@@ -4,7 +4,7 @@ using UnityEngine.SceneManagement;
 public class MenuControl : MonoBehaviour
 {
     [SerializeField]
-    private GameObject mainOptionsView, settingsView, creditsView, settingsControl;
+    private GameObject mainOptionsView, settingsView, creditsView, quitView, settingsControl;
     private AudioSource audioSource;
     private GameSettings gameSettings;
 
@@ -17,6 +17,7 @@ public class MenuControl : MonoBehaviour
 
         mainOptionsView.SetActive(true);
         settingsView.SetActive(false);
+        quitView.SetActive(false);
         creditsView.SetActive(false);
 
         audioSource = GameObject.FindObjectOfType<AudioSource>();
@@ -27,6 +28,7 @@ public class MenuControl : MonoBehaviour
     {
         mainOptionsView.SetActive(false);
         creditsView.SetActive(false);
+        quitView.SetActive(false);
         settingsView.SetActive(true);
 
         audioSource = GameObject.FindObjectOfType<AudioSource>();
@@ -38,6 +40,7 @@ public class MenuControl : MonoBehaviour
     {
         mainOptionsView.SetActive(false);
         settingsView.SetActive(false);
+        quitView.SetActive(false);
         creditsView.SetActive(true);
 
         audioSource = GameObject.FindObjectOfType<AudioSource>();
@@ -57,6 +60,7 @@ public class MenuControl : MonoBehaviour
 
         settingsView.SetActive(false);
         creditsView.SetActive(false);
+        quitView.SetActive(false);
         mainOptionsView.SetActive(true);
         
 
@@ -68,6 +72,7 @@ public class MenuControl : MonoBehaviour
     {
         creditsView.SetActive(false);
         settingsView.SetActive(false);
+        quitView.SetActive(false);
         mainOptionsView.SetActive(true);
     }
 
@@ -78,6 +83,17 @@ public class MenuControl : MonoBehaviour
     }
 
     public void QuitGame()
+    {
+        mainOptionsView.SetActive(false);
+        creditsView.SetActive(false);
+        settingsView.SetActive(false);
+        quitView.SetActive(true);
+
+        audioSource = GameObject.FindObjectOfType<AudioSource>();
+        audioSource.volume = PlayerPrefs.GetFloat("soundVolume", 0.7f);
+    }
+
+    public void ExitYes()
     {
         Application.Quit();
     }
